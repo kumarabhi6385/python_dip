@@ -1,5 +1,6 @@
 class AzureBlobConfig():
-    def __init__(self, maxfilesize, storageaccounturl, storageaccountkey):
+    def __init__(self, maxfilesize, account_url, token, containername = ""):
         self.maxfilesize = maxfilesize
-        self.storageaccounturl = storageaccounturl
-        self.storageaccountkey = storageaccountkey
+        self.account_url = account_url
+        self.token = token
+        self.containername = containername

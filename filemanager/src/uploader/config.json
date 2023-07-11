@@ -1,0 +1,11 @@
+{
+  "database": {
+    "url": "local host",
+    "database": "SQL"
+  },
+  "azure_storage_account": {
+    "account_url": "test_name",
+    "token": "test_name",
+    "maxfilesize": 1048576
+  }
+}

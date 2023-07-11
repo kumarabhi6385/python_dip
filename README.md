@@ -26,3 +26,7 @@ This Project will used to demonstrate large files to be uploaded on blobs for fu
 # to install dependency run
 
 pip install -r requirement.txt
+
+# set up azure blob conenction with python
+
+pip install azure-storage-blob azure-identity
