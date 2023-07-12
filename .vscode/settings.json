@@ -5,5 +5,9 @@
   "python.formatting.provider": "none",
   "python.defaultInterpreterPath": "PATH_TO_VENV_INTERPRETER",
   "python.terminal.activateEnvironment": true,
-  "python.analysis.extraPaths": ["filemanager/src"]
+  "python.analysis.extraPaths": [
+    "filemanager/src",
+    "filemanager/src/fileservice",
+    "filemanager/src/blobmanager"
+  ]
 }
