@@ -4,8 +4,12 @@
     "database": "SQL"
   },
   "azure_storage_account": {
-    "account_url": "test_name",
-    "token": "test_name",
-    "maxfilesize": 1048576
+    "account_url": "",
+    "token": "",
+    "account_name": "",
+    "account_key": "",
+    "connectionstring": "",
+    "maxfilesize": 1048576,
+    "container_name": ""
   }
 }
