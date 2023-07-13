@@ -45,8 +45,50 @@ async def getListOfBlobsAsync():
         logging.debug("Outside getListOfBlobs method")
         return data
     
+async def deleteBlobAsync(blobname:str):
+    try:
+        logging.debug("Inside deleteBlobAsync method")
+        blobConfig = getAzureStorageAccountConfiguration()
+        blobmanager = AzureBlobHandler(blobConfig)
+        data = await blobmanager.delete_blob_async(blobname)
+    except Exception as err:
+        logging.exception(f"Exception details  - {err}")
+        raise Exception(err)
+    finally:
+        logging.debug("Outside deleteBlobAsync method")
+        return data
+    
+async def deleteBlobsAsync(blobs:list):
+    try:
+        logging.debug("Inside deleteBlobsAsync method")
+        blobConfig = getAzureStorageAccountConfiguration()
+        blobmanager = AzureBlobHandler(blobConfig)
+        data = await blobmanager.delete_blobs_async(blobs)
+    except Exception as err:
+        logging.exception(f"Exception details  - {err}")
+        raise Exception(err)
+    finally:
+        logging.debug("Outside deleteBlobsAsync method")
+        return data
+    
+async def deleteAllBlobsAsync():
+    try:
+        logging.debug("Inside deleteAllBlobsAsync method")
+        blobConfig = getAzureStorageAccountConfiguration()
+        blobmanager = AzureBlobHandler(blobConfig)
+        data = await blobmanager.delete_all_blobs_async()
+    except Exception as err:
+        logging.exception(f"Exception details  - {err}")
+        raise Exception(err)
+    finally:
+        logging.debug("Outside deleteAllBlobsAsync method")
+        return data
+    
 async def main():
     await uploadfile(r"C:\Users\Abhishek.Srivastava\Desktop\src\GoF_Book.pdf")
+    #await deleteBlobAsync(r"60e83468-c652-4e71-be94-fd9a5da5f4ee..pdf")
+    #await deleteBlobsAsync(['02b3c876-c0c3-4aa2-a43c-7bdd25d42299.pdf', 'd504aa28-ef62-41e9-a3d5-975601020b2a.pdf'])
+    #await deleteAllBlobsAsync()
     data = await getListOfBlobsAsync()
     logging.info(data)
 
